@@ -1,0 +1,17 @@
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\bin\Debug\net6.0\DataLayer.dll
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\bin\Debug\net6.0\DataObjects.dll
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\bin\Debug\net6.0\DataLayer.pdb
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\bin\Debug\net6.0\DataObjects.pdb
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CopyComplete
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+C:\Proyects\PruebaHits\API\ApiPruebaHits\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll

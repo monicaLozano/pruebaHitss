@@ -1,0 +1,107 @@
+﻿@model List<DataObjects.Product>
+
+<table class="table table-striped" id="clientsTable">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var product in Model)
+            {
+                <tr data-id="@product.idProduct">
+                    <td><input type="text" class="form-control" value="@product.productName" /></td>
+                    <td><input type="text" class="form-control" value="@product.description" /></td>
+                    <td><input type="text" class="form-control" value="@product.quantity" /></td>
+                    <td><input type="text" class="form-control" value="@product.price" /></td>
+                    <td>
+                        <button class="btn btn-primary saveBtn">Save</button>
+                        <button class="btn btn-danger deleteBtn">Delete</button>
+                    </td>
+                </tr>
+            }
+        }
+        
+        <tr>
+            <form method="post" asp-action="AddOrUpdateProduct">
+                <td><input type="text" name="productName" /></td>
+                <td><input type="text" name="description" /></td>
+                <td><input type="text" name="quantity" /></td>
+                <td><input type="text" name="price" /></td>
+                <td><button type="submit" class="btn btn-success">Add</button></td>
+            </form>
+        </tr>
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Función para actualizar un cliente
+            $('.saveBtn').on('click', function(event) {
+                event.preventDefault();
+                var tr = $(this).closest('tr');
+                var idClient = tr.data('id'); // Asegúrate de que este atributo esté definido correctamente en el HTML
+                var data = {
+                    idProduct: idProduct,
+                    productName: tr.find('input').eq(0).val(),
+                    description: tr.find('input').eq(1).val(),
+                    quantity: tr.find('input').eq(2).val(),
+                    price: tr.find('input').eq(3).val()
+                };
+
+                $.ajax({
+                    url: '/Home/AddOrUpdateProduct',
+                    method: 'POST',
+                    data: data,
+                    success: function(response) {
+                        if (response.success) {
+                            // Actualiza la tabla o muestra un mensaje de éxito
+                            alert(response.message);
+                            // Aquí podrías actualizar la fila en la tabla si es necesario
+                        } else {
+                            // Muestra un mensaje de error
+                            alert(response.message);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        // Maneja cualquier error de la solicitud AJAX
+                        alert("Ocurrió un error: " + error);
+                    }
+                });
+            });
+
+            // Función para eliminar un cliente
+            $('.deleteBtn').on('click', function(event) {
+                event.preventDefault();
+                var tr = $(this).closest('tr');
+                var idProduct = tr.data('id'); // Asegúrate de que este atributo esté definido correctamente en el HTML
+
+                $.ajax({
+                    url: '/Home/DeleteProduct/' + idProduct,
+                    method: 'POST',
+                    success: function(response) {
+                        if (response.success) {
+                            // Actualiza la tabla o muestra un mensaje de éxito
+                            alert(response.message);
+                            tr.remove(); // Elimina la fila de la tabla
+                        } else {
+                            // Muestra un mensaje de error
+                            alert(response.message);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        // Maneja cualquier error de la solicitud AJAX
+                        alert("Ocurrió un error: " + error);
+                    }
+                });
+            });
+        });
+    </script>
+}

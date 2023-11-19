@@ -1,0 +1,107 @@
+﻿@model List<DataObjects.Client>
+
+<table class="table table-striped" id="clientsTable">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var client in Model)
+            {
+                <tr data-id="@client.idClient">
+                    <td><input type="text" class="form-control" value="@client.fullName" /></td>
+                    <td><input type="text" class="form-control" value="@client.email" /></td>
+                    <td><input type="text" class="form-control" value="@client.address" /></td>
+                    <td><input type="text" class="form-control" value="@client.phone" /></td>
+                    <td>
+                        <button class="btn btn-primary saveBtn">Save</button>
+                        <button class="btn btn-danger deleteBtn">Delete</button>
+                    </td>
+                </tr>
+            }
+        }
+        
+        <tr>
+            <form method="post" asp-action="AddOrUpdateClient">
+                <td><input type="text" name="FullName" /></td>
+                <td><input type="text" name="Email" /></td>
+                <td><input type="text" name="Address" /></td>
+                <td><input type="text" name="Phone" /></td>
+                <td><button type="submit" class="btn btn-success">Add</button></td>
+            </form>
+        </tr>
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Función para actualizar un cliente
+            $('.saveBtn').on('click', function(event) {
+                event.preventDefault();
+                var tr = $(this).closest('tr');
+                var idClient = tr.data('id'); // Asegúrate de que este atributo esté definido correctamente en el HTML
+                var data = {
+                    idClient: idClient,
+                    fullName: tr.find('input').eq(0).val(),
+                    email: tr.find('input').eq(1).val(),
+                    address: tr.find('input').eq(2).val(),
+                    phone: tr.find('input').eq(3).val()
+                };
+
+                $.ajax({
+                    url: '/Home/AddOrUpdateClient',
+                    method: 'POST',
+                    data: data,
+                    success: function(response) {
+                        if (response.success) {
+                            // Actualiza la tabla o muestra un mensaje de éxito
+                            alert(response.message);
+                            // Aquí podrías actualizar la fila en la tabla si es necesario
+                        } else {
+                            // Muestra un mensaje de error
+                            alert(response.message);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        // Maneja cualquier error de la solicitud AJAX
+                        alert("Ocurrió un error: " + error);
+                    }
+                });
+            });
+
+            // Función para eliminar un cliente
+            $('.deleteBtn').on('click', function(event) {
+                event.preventDefault();
+                var tr = $(this).closest('tr');
+                var idClient = tr.data('id'); // Asegúrate de que este atributo esté definido correctamente en el HTML
+
+                $.ajax({
+                    url: '/Home/DeleteClient/' + idClient,
+                    method: 'POST',
+                    success: function(response) {
+                        if (response.success) {
+                            // Actualiza la tabla o muestra un mensaje de éxito
+                            alert(response.message);
+                            tr.remove(); // Elimina la fila de la tabla
+                        } else {
+                            // Muestra un mensaje de error
+                            alert(response.message);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        // Maneja cualquier error de la solicitud AJAX
+                        alert("Ocurrió un error: " + error);
+                    }
+                });
+            });
+        });
+    </script>
+}

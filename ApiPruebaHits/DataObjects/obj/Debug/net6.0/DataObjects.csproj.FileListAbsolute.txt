@@ -1,0 +1,12 @@
+C:\Proyects\PruebaHits\API\ApiPruebaHits\DataObjects\bin\Debug\net6.0\DataObjects.deps.json
+C:\Proyects\PruebaHits\API\ApiPruebaHits\DataObjects\bin\Debug\net6.0\DataObjects.dll
+C:\Proyects\PruebaHits\API\ApiPruebaHits\DataObjects\bin\Debug\net6.0\DataObjects.pdb
+C:\Proyects\PruebaHits\API\ApiPruebaHits\DataObjects\obj\Debug\net6.0\DataObjects.csproj.AssemblyReference.cache
+C:\Proyects\PruebaHits\API\ApiPruebaHits\DataObjects\obj\Debug\net6.0\DataObjects.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyects\PruebaHits\API\ApiPruebaHits\DataObjects\obj\Debug\net6.0\DataObjects.AssemblyInfoInputs.cache
+C:\Proyects\PruebaHits\API\ApiPruebaHits\DataObjects\obj\Debug\net6.0\DataObjects.AssemblyInfo.cs
+C:\Proyects\PruebaHits\API\ApiPruebaHits\DataObjects\obj\Debug\net6.0\DataObjects.csproj.CoreCompileInputs.cache
+C:\Proyects\PruebaHits\API\ApiPruebaHits\DataObjects\obj\Debug\net6.0\DataObjects.dll
+C:\Proyects\PruebaHits\API\ApiPruebaHits\DataObjects\obj\Debug\net6.0\refint\DataObjects.dll
+C:\Proyects\PruebaHits\API\ApiPruebaHits\DataObjects\obj\Debug\net6.0\DataObjects.pdb
+C:\Proyects\PruebaHits\API\ApiPruebaHits\DataObjects\obj\Debug\net6.0\ref\DataObjects.dll
